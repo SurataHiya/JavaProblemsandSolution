@@ -4,7 +4,9 @@ class BankAccount {
 
     BankAccount(){
         accountNumber ="SSH-349";
+        // accountNumber = "";
         balance = 100.00;
+        //balance = 0 ;
 
     }
 
