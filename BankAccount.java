@@ -25,7 +25,7 @@ class BankAccount {
         } else if (amount <= 0) {
             System.out.println("Error: withdrawal money is zero and less than zero");
         }
-        else if(amount < balance){
+        else if(amount <= balance){
             balance -= amount;
             System.out.println("Withdrawn " +  amount);
         }
