@@ -1,0 +1,87 @@
+class BankAccount {
+    private String accountNumber;
+    private double balance;
+
+    BankAccount(){
+        accountNumber ="SSH-349";
+        balance = 100.00;
+
+    }
+
+
+    public void setAccountNumber(String amount1){
+
+        if(accountNumber == ""){
+            accountNumber = amount1;
+
+        }
+        else{
+            return;
+        }
+
+
+    }
+
+    public void setBalance(double initialAmount){
+        if(balance == 0 ){
+            balance = initialAmount;
+
+        }
+        else{
+            balance+= initialAmount;
+        }
+
+
+    }
+    public double getBalance() {
+        return balance;
+    }
+
+
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited:  " + amount);
+        }
+    }
+
+    public void withdraw(double amount) {
+        if (amount > balance) {
+            System.out.println("Error :Insufficient money to be withdrawn because current balance is "+getBalance()+" which is less than " + (amount-getBalance()) +" from " + amount);
+        } else if (amount <= 0) {
+            System.out.println("Error: withdrawal money is zero and less than zero");
+        }
+        else if(amount < balance){
+            balance -= amount;
+            System.out.println("Withdrawn " +  amount);
+        }
+    }
+
+
+    public void displayAccountInfo() {
+
+        System.out.println("Account number: " + accountNumber);
+        System.out.println("Current balance: " + balance);
+
+    }
+
+    public static void main(String[] args) {
+
+        BankAccount myAccount = new BankAccount();
+
+        myAccount.setAccountNumber("SSH-35528");
+        myAccount.setBalance(500.00);
+        System.out.println("Initial balance  " + myAccount.getBalance());
+
+        myAccount.deposit(250.00);
+
+        System.out.println("After deposit : balance is " + myAccount.getBalance());
+
+
+        myAccount.withdraw(100.00);
+
+        myAccount.displayAccountInfo();
+
+        myAccount.withdraw(1000.00); //----> TO SHOW THE error is occuring if amount is greater than current balance
+    }
+}
