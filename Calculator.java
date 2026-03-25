@@ -15,7 +15,7 @@ class Calculator {
             return a / b;
         } catch (Exception e) {
 
-            return -1;
+            return -3;
         }
     }
 
